@@ -30,6 +30,9 @@ const verMas = ()=>{
     seccionInformacionExtra[1].insertBefore(parrafoNuevo,btnVerMas) //agrega un nodo hijo al principio
     console.log(seccionInformacionExtra[1].children) //agrega un nodo hijo al principio
 
+    //opcion 2
+    // seccionInformacionExtra[1].innerHTML += `<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo consequuntur, ipsa modi obcaecati autem et numquam minima distinctio ex repellat excepturi molestias ea esse voluptate tempore molestiae animi neque. Animi?</p>`
+
     //modificar el texto del boton
     btnVerMas.innerHTML = 'Ocultar';
     btnVerMas.className = 'btn btn-outline-danger';
