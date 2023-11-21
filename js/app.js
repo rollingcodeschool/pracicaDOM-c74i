@@ -45,9 +45,22 @@ const verMas = ()=>{
     }
    
 }
+// Event
+
+const obtenerDatos = (e)=>{
+    e.preventDefault();
+    console.log(e);
+    console.log('estoy en el formulario 🎭');
+    const textoInput = document.getElementById('busqueda');
+    console.log(textoInput.value);
+}
 
 //buscar el boton vermas
 const btnVerMas = document.getElementById('btnVerMas');
+const formBuscar = document.querySelector('#formBuscar');
+
+console.log(formBuscar);
 
 //agregar el evento click
 btnVerMas.addEventListener('click', verMas);
+formBuscar.addEventListener('submit', obtenerDatos);
