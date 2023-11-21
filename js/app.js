@@ -12,8 +12,11 @@ const cambiarTitulo = () =>{
 }
 
 const verMas = ()=>{
-    console.log('desde la funcion ver mas')
-    //opcion 1
+    //traigo el nodo padre
+    const seccionInformacionExtra = document.getElementsByClassName('my-5');
+    
+    if(btnVerMas.innerHTML === 'Ver mas...'){
+ //opcion 1
     //1- crear un parrafo nuevo
     const parrafoNuevo = document.createElement('p'); // <p></p>
     console.log(parrafoNuevo)
@@ -21,9 +24,23 @@ const verMas = ()=>{
     parrafoNuevo.innerHTML = `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo consequuntur, ipsa modi obcaecati autem et numquam minima distinctio ex repellat excepturi molestias ea esse voluptate tempore molestiae animi neque. Animi?`;
     parrafoNuevo.className = 'lead'
 // 3- agregar el nuevo parrafo al DOM
-    const seccionInformacionExtra = document.getElementsByClassName('my-5');
     console.log(seccionInformacionExtra[1]);
-    seccionInformacionExtra[1].appendChild(parrafoNuevo)
+    // seccionInformacionExtra[1].appendChild(parrafoNuevo) //agrega un nodo hijo al final
+    // seccionInformacionExtra[1].prepend(parrafoNuevo) //agrega un nodo hijo al principio
+    seccionInformacionExtra[1].insertBefore(parrafoNuevo,btnVerMas) //agrega un nodo hijo al principio
+    console.log(seccionInformacionExtra[1].children) //agrega un nodo hijo al principio
+
+    //modificar el texto del boton
+    btnVerMas.innerHTML = 'Ocultar';
+    btnVerMas.className = 'btn btn-outline-danger';
+    }else{
+        console.log('aqui deberia ocultar el parrafo');
+        console.log(seccionInformacionExtra[1].children)
+        seccionInformacionExtra[1].removeChild(seccionInformacionExtra[1].children[2]);
+        btnVerMas.innerHTML = 'Ver mas...';
+        btnVerMas.className = 'btn btn-outline-light';
+    }
+   
 }
 
 //buscar el boton vermas
